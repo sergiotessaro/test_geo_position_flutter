@@ -1,5 +1,4 @@
 import 'dart:isolate';
-import 'dart:math';
 import 'dart:ui';
 
 import 'package:background_locator/background_locator.dart';
@@ -18,8 +17,6 @@ part 'geo_controller.g.dart';
 class GeoController = _GeoControllerBase with _$GeoController;
 
 abstract class _GeoControllerBase with Store {
-  static const String isolateName = 'LocatorIsolate';
-
   @observable
   ObservableList<Location> locations = ObservableList();
 
@@ -36,7 +33,8 @@ abstract class _GeoControllerBase with Store {
       try {
         loading = true;
         if (!(await BackgroundLocator.isRegisterLocationUpdate())) {
-          IsolateNameServer.registerPortWithName(port.sendPort, isolateName);
+          IsolateNameServer.registerPortWithName(
+              port.sendPort, "LocationIsolate");
           port.listen((dynamic data) {
             print(data.toString());
           });

@@ -1,6 +1,6 @@
 
 
-import 'package:projeto_geoposic/device/database/constants.dart';
+import 'package:projeto_geoposic/app/device/database/constants.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 import 'dart:async';

@@ -1,5 +1,5 @@
+import 'package:projeto_geoposic/app/device/database/dbHandler.dart';
 import 'package:projeto_geoposic/app/model/location.dart';
-import 'package:projeto_geoposic/device/database/dbHandler.dart';
 
 
 class LocationTableHandler {
